@@ -93,22 +93,18 @@ async def define_results(user_id):
     answer_c = answer.count("C")
     answer_d = answer.count("D")
     if answer_a > answer_b and answer_a > answer_c and answer_a > answer_d:
-        print("результат А")
         result = 1
         await cursor.execute('UPDATE results SET result = ? WHERE user_id = ?', (result, user_id))
         await connect.commit()
     elif answer_b > answer_c and answer_b > answer_d and answer_b > answer_a:
-        print("результат B")
         result = 2
         await cursor.execute('UPDATE results SET result = ? WHERE user_id = ?', (result, user_id))
         await connect.commit()
     elif answer_c > answer_b and answer_c > answer_d and answer_c > answer_a:
-        print("результат C")
         result = 3
         await cursor.execute('UPDATE results SET result = ? WHERE user_id = ?', (result, user_id))
         await connect.commit()
     elif answer_d > answer_a and answer_d > answer_b and answer_d > answer_c:
-        print("результат D")
         result = 4
         await cursor.execute('UPDATE results SET result = ? WHERE user_id = ?', (result, user_id))
         await connect.commit()

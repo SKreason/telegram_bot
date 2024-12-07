@@ -28,7 +28,6 @@ async def get_feedback_list_db():
     cursor = await connect.cursor()
     list_feedback = await cursor.execute('SELECT * FROM feedback_user')
     list_feedback = await list_feedback.fetchall()
-    print(list_feedback)
     max_i = len(list_feedback)
     text_list = []
     for i in range(max_i):
